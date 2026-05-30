@@ -22,7 +22,7 @@ spec:
       containers:
         - name: laravel
           # ↓ GitHub Actions এই line update করবে automatically
-          image: your-dockerhub-username/laravel-app:latest
+          image: fkfiroj/laravel-app:latest
           ports:
             - containerPort: 80
 

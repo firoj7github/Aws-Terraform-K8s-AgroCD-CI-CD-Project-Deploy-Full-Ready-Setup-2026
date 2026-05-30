@@ -8,9 +8,9 @@ spec:
 
   source:
     # ↓ তোমার GitHub repo URL দাও
-    repoURL: https://github.com/YOUR_USERNAME/YOUR_REPO
+    repoURL: https://github.com/firoj7github/Aws-Terraform-K8s-AgroCD-CI-CD-Project-Deploy-Full-Ready-Setup-2026
     targetRevision: main
-    path: k8s   # এই folder watch করবে ArgoCD
+    path: k8s
 
   destination:
     server: https://kubernetes.default.svc
