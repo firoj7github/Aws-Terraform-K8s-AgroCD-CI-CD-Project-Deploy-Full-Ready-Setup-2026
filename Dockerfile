@@ -32,7 +32,7 @@ COPY . .
 
 # ─── Install dependencies ──────────────────────────────────────────────
 RUN composer install --no-dev --optimize-autoloader --no-interaction
-RUN npm ci && npm run build
+RUN if [ -f package.json ]; then npm install && npm run build; fi
 
 # ─── Permissions ───────────────────────────────────────────────────────
 RUN chown -R www-data:www-data storage bootstrap/cache \
