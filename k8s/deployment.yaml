@@ -22,7 +22,7 @@ spec:
       containers:
         - name: laravel
           # ↓ GitHub Actions এই line update করবে automatically
-          image: fkfiroj/laravel-app:latest
+          image: fkfiroj/laravel-app:8db9bc4c6ec5fac3117acb5aca49008b25fed3f5
           ports:
             - containerPort: 80
 
