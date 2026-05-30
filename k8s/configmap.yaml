@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: laravel-config
+  namespace: laravel-prod
+data:
+  APP_ENV:           "production"
+  APP_DEBUG:         "false"
+  APP_URL:           "http://your-elb-url-here"  # deploy এর পরে ELB URL দাও
+  LOG_CHANNEL:       "stderr"                     # container log best practice
+  CACHE_DRIVER:      "file"
+  SESSION_DRIVER:    "file"
+  QUEUE_CONNECTION:  "sync"

@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: laravel-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    # ↓ তোমার GitHub repo URL দাও
+    repoURL: https://github.com/YOUR_USERNAME/YOUR_REPO
+    targetRevision: main
+    path: k8s   # এই folder watch করবে ArgoCD
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: laravel-prod
+
+  syncPolicy:
+    automated:
+      prune: true       # পুরনো resource delete করবে
+      selfHeal: true    # manual change হলে revert করবে
+    syncOptions:
+      - CreateNamespace=true
